@@ -16,7 +16,6 @@
 	<dependencies>
 		<!-- Spring -->
 		<!-- H2 데이터베이스 -->
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -131,6 +130,31 @@
     <artifactId>ojdbc11</artifactId>
     <version>23.3.0.23.09</version>
 </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/aspectj/aspectjrt -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>${org.aspectj-version}</version>
+</dependency>
+	
+		
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>${org.aspectj-version}</version>
+</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjtools</artifactId>
+    <version>${org.aspectj-version}</version>
+</dependency>
+		
+		
+		
 		
 		
 		      
