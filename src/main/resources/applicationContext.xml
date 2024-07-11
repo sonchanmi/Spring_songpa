@@ -10,17 +10,33 @@
   
     <context:component-scan base-package="com.springbook.biz"></context:component-scan>
     
-    <bean id="afterReturning" class="com.springbook.biz.common.AfterReturninAdvice" />
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    
+  
+  
+    
+  <!-- DataSource 설정 -->
+   <context:property-placeholder location="classpath:config/database.properties" />
+   
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+   <property name="driverClassName" value="${jdbc.driver}" />
+   <property name="url" value="${jdbc.url}" />
+   <property name="username" value="${jdbc.username}" />
+   <property name="password" value="${jdbc.password}" />
+   </bean>
+
+    </beans>
+  <!--   <bean id="around" class="com.springbook.biz.common.AroundAdvice" />
     
     <aop:config>
-     <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="getPointcut"/>
+     <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
           
-     <aop:aspect ref="afterReturnin">
-       <aop:after-returning method="afterLog" pointcut-ref="getPointcut" />
+     <aop:aspect ref="around">
+       <aop:around  method="aroundLog" pointcut-ref="allPointcut" />
      </aop:aspect>
      
     </aop:config>
-    
+     -->
     
     <!-- <bean id = "userService" class="com.springbook.biz.user.impl.UserServiceImpl">
       <property name="userDAO" ref="userDAO"></property>
@@ -28,7 +44,7 @@
     
     <bean id="userDAO" class = "com.springbook.biz.user.impl.UserDAO"/> -->
     
-  </beans>
+
 
 <!-- <bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="27000"/>
    -->    
