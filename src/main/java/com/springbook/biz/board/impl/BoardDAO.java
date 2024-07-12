@@ -38,6 +38,7 @@ public class BoardDAO {
             stmt.setString(2, vo.getWriter());
             stmt.setString(3, vo.getContent());
             stmt.executeUpdate();
+            System.out.println("±Û µî·Ï ");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

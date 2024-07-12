@@ -21,7 +21,7 @@ public class BoardServiceClient {
 		vo.setContent("임시내용........");
 		boardService.insertBoard(vo);
 		
-		//4. 글 목록 검색 기능 테스트
+		//4. 글 목록 검색 기능 테스트0
 		List<BoardVO> boardList = boardService.getBoardList(vo);
 		for(BoardVO board : boardList) {
 			System.out.println("----> " + board.toString());
